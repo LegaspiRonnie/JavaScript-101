@@ -10,22 +10,27 @@
     <input type="number" class="ammountInput" id="price2" placeholder="Enter ammount">
     <input type="number" class="ammountInput" id="price3" placeholder="Enter ammount">
     <input type="number" class="ammountInput" id="price4" placeholder="Enter ammount">
-    <button id="submitBtn">Submit</button>
+    <button id="submitBtn" onclick="">Submit</button>
     <input type="number" id="total" placeholder="Total" readonly>
 
 
     <script>
-        const prices = document.querySelectorAll(".ammountInput");
-        const calculateBtn = document.querySelector('#submitBtn');
-        const total = document.querySelector('#total');
+        const prices = document.querySelectorAll('.ammountInput');
+        const submit = document.querySelector('#submitBtn');
+        let total = document.querySelector('#total');
 
-        calculateBtn.addEventListener('click', () => {
+        submit.addEventListener('click', () => {
             let sum = 0;
+
             for (let i = 0; i < prices.length; i++) {
-                sum += Number(prices[i].value) || 0;
+                sum += Number(prices[i].value);
             }
+            
             total.value = sum;
-        });
+
+            
+        } )
+        
     </script>
 </body>
 </html>
